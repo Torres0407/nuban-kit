@@ -1,0 +1,81 @@
+{
+  "name": "nuban-kit",
+  "version": "0.1.0",
+  "description": "Nigerian bank account (NUBAN) validation and account-name resolution toolkit.",
+  "keywords": [
+    "nuban",
+    "nigeria",
+    "bank",
+    "account",
+    "verification",
+    "paystack",
+    "account-name",
+    "nip"
+  ],
+  "license": "MIT",
+  "author": "Torres0407 (https://github.com/Torres0407)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torres0407/nuban-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Torres0407/nuban-kit/issues"
+  },
+  "homepage": "https://github.com/Torres0407/nuban-kit#readme",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "check:package": "publint && attw --pack . --profile node16",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.1",
+    "@eslint/js": "^9.15.0",
+    "@types/node": "^20.17.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.15.0",
+    "publint": "^0.2.12",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0",
+    "vitest": "^2.1.8"
+  },
+  "overrides": {
+    "fflate": "0.8.2"
+  }
+}
