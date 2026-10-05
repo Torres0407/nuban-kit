@@ -50,8 +50,7 @@
     "node": ">=20"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "scripts": {
     "build": "tsup",
@@ -77,5 +76,8 @@
   },
   "overrides": {
     "fflate": "0.8.2"
+  },
+  "dependencies": {
+    "nuban-kit": "file:nuban-kit-0.1.0.tgz"
   }
 }
